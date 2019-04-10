@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import { people } from "./assets/data/data";
-import Card from "./component/card/card";
+import NavBar from "./component/navBar/navBar";
+import NotFound from "./component/notFound/notFound";
+import Students from "./component/students/students";
+import Trainers from "./component/trainers/trainers";
+import CardContainer from "./containers/cardContainer";
 
 class App extends Component {
   public render() {
@@ -10,10 +13,12 @@ class App extends Component {
         <header className="App-header">
           <h1>_nology Top Trumps</h1>
         </header>
+        <NavBar />
         <main>
-          {people.map((data, i) => (
-            <Card person={people[i]} />
-          ))}
+          <CardContainer />
+          <Trainers />
+          <Students />
+          <NotFound />
         </main>
       </div>
     );
