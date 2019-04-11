@@ -1,0 +1,17 @@
+.search-div {
+  font-size: 11pt;
+  height: 1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .search-bar {
+    &:hover {
+      font-size: 14pt;
+      height: 1.5em;
+      width: 200px;
+      border: red solid 1pt;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./component/navBar/navBar";
 import NotFound from "./component/notFound/notFound";
@@ -15,10 +16,14 @@ class App extends Component {
         </header>
         <NavBar />
         <main>
-          <CardContainer />
-          <Trainers />
-          <Students />
-          <NotFound />
+          <Switch>
+            <Route path="/cards" component={CardContainer} />
+            <Route path="/not-found" component={NotFound} />
+            <Route path="/students" component={Students} />
+            <Route path="/trainers" component={Trainers} />
+            <Route exact={true} path="/" component={CardContainer} />
+            <Redirect to="/not-found" />
+          </Switch>
         </main>
       </div>
     );
